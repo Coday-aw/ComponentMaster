@@ -1,15 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, UserButton } from "@clerk/nextjs";
 
 const Buttons = () => {
   const { userId } = useAuth();
   return (
     <div className="w-ful">
       {userId ? (
-        <button className="text-white  bg-blue-500 p-2 px-5 rounded-lg font-semibold">
-          hello
-        </button>
+        <UserButton />
       ) : (
         <div className="flex items-center gap-2">
           <button className="text-white  bg-blue-500 p-2 px-5 rounded-lg font-semibold">
